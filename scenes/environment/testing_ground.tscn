@@ -8,12 +8,12 @@
 script = ExtResource("1_6lkv4")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1646459040]
-offset_left = 1227.0
-offset_top = -5.0
-offset_right = 2387.0
-offset_bottom = 995.0
+offset_left = 645.7893
+offset_top = -0.9999975
+offset_right = 1768.7769
+offset_bottom = 1095.2532
 rotation = 1.5707964
-scale = Vector2(1, 1.28)
+scale = Vector2(0.295, 0.59)
 texture = ExtResource("1_55rep")
 
 [node name="MousePlayer" parent="." unique_id=2094407848 instance=ExtResource("2_vpoes")]

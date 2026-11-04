@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="Citrus Inc."
+run/main_scene="uid://crryyfewqh4bq"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://ri44yc2g57yb"
 
 [display]
 
+window/size/viewport_width=640
+window/size/viewport_height=320
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 
 [input]
 
@@ -48,4 +53,5 @@ free_mouse={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
