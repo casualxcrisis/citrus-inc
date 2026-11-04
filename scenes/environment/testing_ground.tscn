@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://crryyfewqh4bq"]
+
+[ext_resource type="Script" uid="uid://bc20qblvvdm8l" path="res://assets/scripts/system/testing_ground.gd" id="1_6lkv4"]
+[ext_resource type="Texture2D" uid="uid://iw5ywe4wfs0d" path="res://assets/placeholder/1000_F_419463828_NyiU1RYh3JigmxkppXpKTOk8XKOoBi5O.jpg" id="1_55rep"]
+[ext_resource type="PackedScene" uid="uid://d2kmaid37p020" path="res://scenes/player/mouse_player.tscn" id="2_vpoes"]
+
+[node name="TestingGround" type="Node2D" unique_id=189769796]
+script = ExtResource("1_6lkv4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1646459040]
+offset_left = 1227.0
+offset_top = -5.0
+offset_right = 2387.0
+offset_bottom = 995.0
+rotation = 1.5707964
+scale = Vector2(1, 1.28)
+texture = ExtResource("1_55rep")
+
+[node name="MousePlayer" parent="." unique_id=2094407848 instance=ExtResource("2_vpoes")]

@@ -18,7 +18,7 @@ func _physics_process(delta) -> void:
 	velocity.x = move_toward(velocity.x, target_velocity, acceleration * delta)
 
 	# Up/down arrow keys move on Y Just to test forward movement
-	velocity.y = Input.get_axis("forward", "backward") * speed
+	velocity.y = Input.get_axis("up", "down") * speed
 
 	move_and_slide()
 
