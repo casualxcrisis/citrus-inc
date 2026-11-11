@@ -13,7 +13,8 @@ config_version=5
 config/name="Citrus Inc."
 run/main_scene="uid://bepputyfmd8l2"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="uid://ri44yc2g57yb"
+config/icon="uid://dx6n7srtdstib"
+config/windows_native_icon="res://assets/UI/fruit-icon.ico"
 
 [autoload]
 

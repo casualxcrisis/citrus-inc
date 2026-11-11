@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ri44yc2g57yb"
-path="res://.godot/imported/mike-logo.png-f96decc9257143c6624ec0b87001cad3.ctex"
+uid="uid://dx6n7srtdstib"
+path="res://.godot/imported/fruit-icon.png-811f84d95214264b6b3506585ca1c347.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/mike-logo.png"
-dest_files=["res://.godot/imported/mike-logo.png-f96decc9257143c6624ec0b87001cad3.ctex"]
+source_file="res://assets/UI/fruit-icon.png"
+dest_files=["res://.godot/imported/fruit-icon.png-811f84d95214264b6b3506585ca1c347.ctex"]
 
 [params]
 
