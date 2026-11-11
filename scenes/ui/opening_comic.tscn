@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dgjbj6gjkfcpo"]
+
+[ext_resource type="Script" uid="uid://d2yt7f8uev3mm" path="res://assets/scripts/screens/opening_comic.gd" id="1_lxja4"]
+
+[node name="OpeningComic" type="Node2D" unique_id=1066546384]
+script = ExtResource("1_lxja4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=859078563]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(16.221666, 8.219999)
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=933213138]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 201.0
+offset_top = 130.0
+offset_right = 480.08496
+offset_bottom = 180.63
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "[wave freq=4.0]OPENING COMIC[/wave]"
+vertical_alignment = 1

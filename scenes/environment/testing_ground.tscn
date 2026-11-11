@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bc20qblvvdm8l" path="res://assets/scripts/levels/testing_ground.gd" id="1_6lkv4"]
 [ext_resource type="Texture2D" uid="uid://iw5ywe4wfs0d" path="res://assets/placeholder/1000_F_419463828_NyiU1RYh3JigmxkppXpKTOk8XKOoBi5O.jpg" id="1_55rep"]
 [ext_resource type="PackedScene" uid="uid://d2kmaid37p020" path="res://scenes/player/mouse_player.tscn" id="2_vpoes"]
+[ext_resource type="Script" uid="uid://c61387bllj1yg" path="res://assets/scripts/system/player_cam.gd" id="4_6isrq"]
 
 [node name="TestingGround" type="Node2D" unique_id=189769796]
 script = ExtResource("1_6lkv4")
@@ -62,4 +63,11 @@ scale = Vector2(0.295, 0.59)
 texture = ExtResource("1_55rep")
 
 [node name="MousePlayer" parent="." unique_id=2094407848 instance=ExtResource("2_vpoes")]
+unique_name_in_owner = true
 position = Vector2(314, 284)
+
+[node name="PlayerCam" type="Camera2D" parent="." unique_id=1266301556]
+unique_name_in_owner = true
+position = Vector2(314, 284)
+zoom = Vector2(1.165, 1.165)
+script = ExtResource("4_6isrq")
