@@ -7,7 +7,8 @@ extends CharacterBody2D
 
 func  _physics_process(delta: float) -> void:
 	var vel : Vector2 = (get_global_mouse_position() - global_position)
-	if vel.length() > 300:
+	if vel.length() > 900:
 		vel = vel.normalized() * speed
 	velocity = vel * accel
+	velocity.y = 0
 	move_and_slide()

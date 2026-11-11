@@ -1,12 +1,8 @@
 [gd_scene format=3 uid="uid://crryyfewqh4bq"]
 
-[ext_resource type="Script" uid="uid://bc20qblvvdm8l" path="res://assets/scripts/system/testing_ground.gd" id="1_6lkv4"]
+[ext_resource type="Script" uid="uid://bc20qblvvdm8l" path="res://assets/scripts/levels/testing_ground.gd" id="1_6lkv4"]
 [ext_resource type="Texture2D" uid="uid://iw5ywe4wfs0d" path="res://assets/placeholder/1000_F_419463828_NyiU1RYh3JigmxkppXpKTOk8XKOoBi5O.jpg" id="1_55rep"]
 [ext_resource type="PackedScene" uid="uid://d2kmaid37p020" path="res://scenes/player/mouse_player.tscn" id="2_vpoes"]
-[ext_resource type="PackedScene" uid="uid://bmgoe7do2v8v2" path="res://scenes/obstacles/obstacle_1.tscn" id="4_6isrq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd1l"]
-size = Vector2(20, 333)
 
 [node name="TestingGround" type="Node2D" unique_id=189769796]
 script = ExtResource("1_6lkv4")
@@ -19,24 +15,6 @@ offset_bottom = 1095.2532
 rotation = 1.5707964
 scale = Vector2(0.295, 0.59)
 texture = ExtResource("1_55rep")
-
-[node name="SideWallRight" type="StaticBody2D" parent="." unique_id=1413532998]
-position = Vector2(533, 13)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SideWallRight" unique_id=2089248842]
-position = Vector2(0, 152.5)
-shape = SubResource("RectangleShape2D_0yd1l")
-
-[node name="SideWallLeft" type="StaticBody2D" parent="." unique_id=1068381134]
-position = Vector2(86, 13)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SideWallLeft" unique_id=690793943]
-position = Vector2(0, 152.5)
-shape = SubResource("RectangleShape2D_0yd1l")
-
-[node name="Obstacle1" parent="." unique_id=1442845412 instance=ExtResource("4_6isrq")]
-position = Vector2(312, 168)
-scale = Vector2(0.27999756, 0.27999756)
 
 [node name="MousePlayer" parent="." unique_id=2094407848 instance=ExtResource("2_vpoes")]
 position = Vector2(314, 284)
