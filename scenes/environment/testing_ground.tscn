@@ -8,10 +8,55 @@
 script = ExtResource("1_6lkv4")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1646459040]
-offset_left = 645.7893
-offset_top = -0.9999975
-offset_right = 1768.7769
-offset_bottom = 1095.2532
+offset_left = 649.0
+offset_top = -2.7799683
+offset_right = 2000.9922
+offset_bottom = 1093.4731
+rotation = 1.5707964
+scale = Vector2(0.295, 0.59)
+texture = ExtResource("1_55rep")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=673551137]
+offset_left = 648.0
+offset_top = -404.0
+offset_right = 1999.9922
+offset_bottom = 692.2532
+rotation = 1.5707964
+scale = Vector2(0.295, 0.59)
+texture = ExtResource("1_55rep")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=651815976]
+offset_left = 651.00006
+offset_top = -797.99994
+offset_right = 2002.9922
+offset_bottom = 298.25323
+rotation = 1.5707964
+scale = Vector2(0.295, 0.59)
+texture = ExtResource("1_55rep")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=50347458]
+offset_left = 651.00006
+offset_top = -1200.0
+offset_right = 2002.9922
+offset_bottom = -103.746826
+rotation = 1.5707964
+scale = Vector2(0.295, 0.59)
+texture = ExtResource("1_55rep")
+
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=1097006591]
+offset_left = 642.0
+offset_top = 378.0
+offset_right = 1993.9922
+offset_bottom = 1474.2532
+rotation = 1.5707964
+scale = Vector2(0.295, 0.59)
+texture = ExtResource("1_55rep")
+
+[node name="TextureRect6" type="TextureRect" parent="." unique_id=628206993]
+offset_left = 653.0
+offset_top = -1599.0
+offset_right = 2004.9922
+offset_bottom = -502.74683
 rotation = 1.5707964
 scale = Vector2(0.295, 0.59)
 texture = ExtResource("1_55rep")
