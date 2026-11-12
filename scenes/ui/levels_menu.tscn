@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ogneowyn50e7"]
+
+[ext_resource type="Script" uid="uid://cfgxw0ct8oc3x" path="res://scenes/ui/levels_menu.gd" id="1_5r7aj"]
+[ext_resource type="FontFile" uid="uid://cmdyooc2xiatl" path="res://assets/UI/GravityRegular5.ttf" id="1_gds35"]
+[ext_resource type="FontFile" uid="uid://dqm0auf56xh1w" path="res://assets/UI/GravityBold8.ttf" id="2_5r7aj"]
+[ext_resource type="Texture2D" uid="uid://dx6n7srtdstib" path="res://assets/UI/fruit-icon.png" id="3_tkrcc"]
+
+[node name="levels_menu" type="Node2D" unique_id=1128164308]
+script = ExtResource("1_5r7aj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=257916421]
+offset_right = 641.0
+offset_bottom = 318.0
+color = Color(0.90588236, 0.78431374, 0.49411765, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1593890043]
+offset_left = 241.0
+offset_top = 20.0
+offset_right = 429.0
+offset_bottom = 60.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1536351344]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_gds35")
+theme_override_fonts/bold_font = ExtResource("2_5r7aj")
+theme_override_font_sizes/normal_font_size = 34
+theme_override_font_sizes/bold_font_size = 34
+bbcode_enabled = true
+text = "[b]Levels[/b]"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=371618785]
+offset_left = 31.0
+offset_top = 66.0
+offset_right = 223.0
+offset_bottom = 286.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2" unique_id=944948261]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer2/VBoxContainer" unique_id=497035679]
+layout_mode = 2
+texture = ExtResource("3_tkrcc")
+
+[node name="play1" type="Button" parent="MarginContainer2/VBoxContainer" unique_id=1637939708]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gds35")
+text = "Test Level"
+
+[node name="MarginContainer3" type="MarginContainer" parent="." unique_id=581840656]
+offset_left = 30.0
+offset_top = 15.0
+offset_right = 64.0
+offset_bottom = 52.0
+
+[node name="home" type="Button" parent="MarginContainer3" unique_id=309680819]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5r7aj")
+text = "HOME"
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/play1" to="." method="_on_play_1_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/play1" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer3/home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="MarginContainer3/home" to="." method="_on_button_pressed"]
