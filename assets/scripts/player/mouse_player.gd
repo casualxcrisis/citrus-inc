@@ -20,11 +20,15 @@ func  _physics_process(delta: float) -> void:
 	else:
 		anim_player.flip_h = false
 		
-	if abs(vel).x > 10:
+	if abs(vel).x > 50:
 		if anim_player.animation != "turn" and anim_player.animation != "turn-idle":
 			anim_player.play("turn")
 	else:
-		anim_player.play("idle")
+		if anim_player.animation != "turn-finish" and anim_player.animation != "idle":
+			anim_player.play("turn-finish")
+		
+		## old snap to idle in case turn finish breaks 
+		#anim_player.play("idle")
 	
 	last_mouse_angle = current_mouse_angle
 
@@ -32,3 +36,5 @@ func  _physics_process(delta: float) -> void:
 func _on_animated_sprite_2d_animation_finished():
 	if anim_player.animation == "turn":
 		anim_player.play("turn-idle")
+	if anim_player.animation == "turn-finish":
+		anim_player.play("idle")
