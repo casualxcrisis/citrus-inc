@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://rg7cgybxcvh1"]
+
+[ext_resource type="Script" uid="uid://c6lw0tmap5wdv" path="res://scenes/ui/menu.gd" id="1_c2n5p"]
+[ext_resource type="FontFile" uid="uid://cmdyooc2xiatl" path="res://assets/UI/GravityRegular5.ttf" id="1_wedc3"]
+[ext_resource type="FontFile" uid="uid://dqm0auf56xh1w" path="res://assets/UI/GravityBold8.ttf" id="2_c2n5p"]
+
+[node name="Menu" type="Node2D" unique_id=1368277792]
+script = ExtResource("1_c2n5p")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1334001413]
+offset_right = 639.0
+offset_bottom = 321.0
+color = Color(0.90588236, 0.78431374, 0.49411765, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=241715039]
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 509.0
+offset_bottom = 55.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1758791102]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_wedc3")
+theme_override_fonts/bold_font = ExtResource("2_c2n5p")
+theme_override_font_sizes/normal_font_size = 34
+theme_override_font_sizes/bold_font_size = 34
+bbcode_enabled = true
+text = "[b]Lemon Scooter[/b]
+"
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1451386083]
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 281.0
+offset_bottom = 186.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2" unique_id=1053463137]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Levels" type="Button" parent="MarginContainer2/VBoxContainer" unique_id=1034252287]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wedc3")
+text = "Levels"
+
+[node name="Credits" type="Button" parent="MarginContainer2/VBoxContainer" unique_id=1835515462]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wedc3")
+text = "Credits"
+
+[node name="Quit" type="Button" parent="MarginContainer2/VBoxContainer" unique_id=413377484]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_wedc3")
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
