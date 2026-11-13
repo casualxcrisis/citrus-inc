@@ -6,10 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd1l"]
 size = Vector2(25, 10)
 
-[sub_resource type="Curve" id="Curve_6isrq"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.41134748, 0.7873564), 0.0, 0.0, 0, 0, Vector2(1, 0.16091955), 0.0, 0.0, 0, 0]
-point_count = 3
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1xe2"]
 atlas = ExtResource("2_f33fw")
 region = Rect2(0, 0, 64, 64)
@@ -159,6 +155,10 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Curve" id="Curve_6isrq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.41134748, 0.7873564), 0.0, 0.0, 0, 0, Vector2(1, 0.16091955), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [node name="MousePlayer" type="CharacterBody2D" unique_id=2094407848]
 script = ExtResource("1_f33fw")
 
@@ -166,8 +166,15 @@ script = ExtResource("1_f33fw")
 position = Vector2(0, 21)
 shape = SubResource("RectangleShape2D_0yd1l")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1644740577]
+sprite_frames = SubResource("SpriteFrames_ra2i3")
+animation = &"turn"
+autoplay = "idle"
+frame = 7
+frame_progress = 0.9889159
+
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=2096362858]
-position = Vector2(0, 24)
+position = Vector2(0, 25)
 amount = 16
 lifetime = 0.19
 local_coords = true
@@ -176,11 +183,5 @@ emission_rect_extents = Vector2(2, 1)
 scale_amount_min = 2.0
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_6isrq")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1644740577]
-sprite_frames = SubResource("SpriteFrames_ra2i3")
-animation = &"turn-finish"
-autoplay = "idle"
-frame_progress = 0.96843463
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
