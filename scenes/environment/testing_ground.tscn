@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://iw5ywe4wfs0d" path="res://assets/placeholder/1000_F_419463828_NyiU1RYh3JigmxkppXpKTOk8XKOoBi5O.jpg" id="1_55rep"]
 [ext_resource type="PackedScene" uid="uid://d2kmaid37p020" path="res://scenes/player/mouse_player.tscn" id="2_vpoes"]
 [ext_resource type="Script" uid="uid://c61387bllj1yg" path="res://assets/scripts/system/player_cam.gd" id="4_6isrq"]
+[ext_resource type="PackedScene" uid="uid://fp5s56vt6moc" path="res://scenes/environment/pothole.tscn" id="5_380s4"]
+[ext_resource type="PackedScene" uid="uid://b7kymm6g3fhno" path="res://scenes/environment/car.tscn" id="6_jpf7c"]
 
 [node name="TestingGround" type="Node2D" unique_id=189769796]
 script = ExtResource("1_6lkv4")
@@ -71,3 +73,12 @@ unique_name_in_owner = true
 position = Vector2(314, 284)
 zoom = Vector2(1.165, 1.165)
 script = ExtResource("4_6isrq")
+
+[node name="Pothole" parent="." unique_id=1991561950 instance=ExtResource("5_380s4")]
+position = Vector2(372, -131)
+
+[node name="Car" parent="." unique_id=485954393 instance=ExtResource("6_jpf7c")]
+position = Vector2(156, -280)
+
+[node name="Car2" parent="." unique_id=1032065416 instance=ExtResource("6_jpf7c")]
+position = Vector2(320, -552)
