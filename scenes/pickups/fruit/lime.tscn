@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://q7b2da0rlp51"]
+
+[ext_resource type="Texture2D" uid="uid://b2d8jw5uk7wnf" path="res://assets/art/pickups-Sheet.png" id="1_yqpfa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0yd1l"]
+radius = 12.0415945
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2x7j"]
+atlas = ExtResource("1_yqpfa")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5pso"]
+atlas = ExtResource("1_yqpfa")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbya5"]
+atlas = ExtResource("1_yqpfa")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cih02"]
+atlas = ExtResource("1_yqpfa")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41xmc"]
+atlas = ExtResource("1_yqpfa")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0oo0"]
+atlas = ExtResource("1_yqpfa")
+region = Rect2(240, 96, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0yd1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2x7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5pso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbya5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cih02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41xmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0oo0")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[node name="Lime" type="StaticBody2D" unique_id=1046087337]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1712292629]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_0yd1l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=226483938]
+sprite_frames = SubResource("SpriteFrames_0yd1l")
+animation = &"idle"
+frame_progress = 0.6860374
