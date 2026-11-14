@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://cau6pxk24i2b8"]
 
-[ext_resource type="Texture2D" uid="uid://c0cqdxt6ghafs" path="res://icon.svg" id="1_fytju"]
+[ext_resource type="Texture2D" uid="uid://c4a7gj7r62hm5" path="res://assets/art/obstacles/mailbox.png" id="1_fytju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0prb"]
-size = Vector2(20, 30)
+size = Vector2(24, 39)
 
 [node name="mail_box" type="StaticBody2D" unique_id=1206943739]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1959467347]
-position = Vector2(0, -13)
+position = Vector2(0, -10.5)
 shape = SubResource("RectangleShape2D_d0prb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=795310513]
 position = Vector2(5.4836273e-06, -13.749999)
-scale = Vector2(0.1562499, 0.22265628)
 texture = ExtResource("1_fytju")

@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://dhj8tnd0e81a3"]
 
-[ext_resource type="Texture2D" uid="uid://c0cqdxt6ghafs" path="res://icon.svg" id="1_mwp5d"]
+[ext_resource type="Texture2D" uid="uid://csai6nts4jdpx" path="res://assets/art/obstacles/food_cart1.png" id="1_mwp5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0prb"]
-size = Vector2(55, 40)
+size = Vector2(48, 43)
 
 [node name="hotdog_cart" type="StaticBody2D" unique_id=569065226]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=956124104]
-position = Vector2(17.5, -18)
+position = Vector2(18, -5.5)
 shape = SubResource("RectangleShape2D_d0prb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1479245279]
 position = Vector2(18, -19)
-scale = Vector2(0.4414061, 0.3046875)
 texture = ExtResource("1_mwp5d")
