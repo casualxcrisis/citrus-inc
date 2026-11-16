@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://tlsdc60bw0l4"]
+
+[ext_resource type="Texture2D" uid="uid://ds00so8ilsjt1" path="res://assets/UI/over2.png" id="1_gp82b"]
+[ext_resource type="Script" uid="uid://bi03sh0ibl0ly" path="res://assets/scripts/screens/score_hud.gd" id="1_ha8c2"]
+[ext_resource type="Texture2D" uid="uid://cs60hf6v5x1ma" path="res://assets/UI/Under.png" id="2_n2ibe"]
+[ext_resource type="Texture2D" uid="uid://cdmwk57hwatku" path="res://assets/UI/progress.png" id="4_bl83v"]
+[ext_resource type="Texture2D" uid="uid://cgnc7ld1igl7j" path="res://assets/UI/overCirc.png" id="5_8xcl6"]
+[ext_resource type="Texture2D" uid="uid://cxbj65hbv7w7a" path="res://assets/UI/progressCirc.png" id="6_bl83v"]
+
+[node name="score_hud" type="Node2D" unique_id=1575621853]
+script = ExtResource("1_ha8c2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1055858632]
+offset_right = 639.0
+offset_bottom = 321.0
+color = Color(1, 1, 1, 0)
+
+[node name="score_bar" type="TextureProgressBar" parent="." unique_id=1042903245]
+unique_name_in_owner = true
+offset_left = 115.0
+offset_top = 53.0
+offset_right = 371.0
+offset_bottom = 85.0
+min_value = 1.0
+value = 1.0
+texture_under = ExtResource("2_n2ibe")
+texture_over = ExtResource("1_gp82b")
+texture_progress = ExtResource("4_bl83v")
+
+[node name="time_bar" type="TextureProgressBar" parent="." unique_id=767561117]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 4
+texture_over = ExtResource("5_8xcl6")
+texture_progress = ExtResource("6_bl83v")
