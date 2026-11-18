@@ -12,7 +12,7 @@ func  _physics_process(delta: float) -> void:
 	if vel.length() > 900:
 		vel = vel.normalized() * Global.base_speed
 	velocity = vel * Global.base_accel
-	velocity.y = Global.base_fwd_vel
+	velocity.y = 0
 	move_and_slide()
 	
 	## animation stuff

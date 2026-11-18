@@ -1,77 +1,32 @@
 [gd_scene format=3 uid="uid://crryyfewqh4bq"]
 
 [ext_resource type="Script" uid="uid://bc20qblvvdm8l" path="res://assets/scripts/levels/testing_ground.gd" id="1_6lkv4"]
-[ext_resource type="Texture2D" uid="uid://iw5ywe4wfs0d" path="res://assets/placeholder/1000_F_419463828_NyiU1RYh3JigmxkppXpKTOk8XKOoBi5O.jpg" id="1_55rep"]
 [ext_resource type="PackedScene" uid="uid://d2kmaid37p020" path="res://scenes/player/mouse_player.tscn" id="2_vpoes"]
 [ext_resource type="Script" uid="uid://c61387bllj1yg" path="res://assets/scripts/system/player_cam.gd" id="4_6isrq"]
+[ext_resource type="PackedScene" uid="uid://c25nv1c1clthu" path="res://scenes/environment/terrains/terrain_controller.tscn" id="5_380s4"]
 [ext_resource type="PackedScene" uid="uid://fp5s56vt6moc" path="res://scenes/obstacles/pothole.tscn" id="5_teywi"]
 
 [node name="TestingGround" type="Node2D" unique_id=189769796]
 script = ExtResource("1_6lkv4")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1646459040]
-offset_left = 649.0
-offset_top = -2.7799683
-offset_right = 2000.9922
-offset_bottom = 1093.4731
-rotation = 1.5707964
-scale = Vector2(0.295, 0.59)
-texture = ExtResource("1_55rep")
-
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=673551137]
-offset_left = 648.0
-offset_top = -404.0
-offset_right = 1999.9922
-offset_bottom = 692.2532
-rotation = 1.5707964
-scale = Vector2(0.295, 0.59)
-texture = ExtResource("1_55rep")
-
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=651815976]
-offset_left = 651.00006
-offset_top = -797.99994
-offset_right = 2002.9922
-offset_bottom = 298.25323
-rotation = 1.5707964
-scale = Vector2(0.295, 0.59)
-texture = ExtResource("1_55rep")
-
-[node name="TextureRect4" type="TextureRect" parent="." unique_id=50347458]
-offset_left = 651.00006
-offset_top = -1200.0
-offset_right = 2002.9922
-offset_bottom = -103.746826
-rotation = 1.5707964
-scale = Vector2(0.295, 0.59)
-texture = ExtResource("1_55rep")
-
-[node name="TextureRect5" type="TextureRect" parent="." unique_id=1097006591]
-offset_left = 642.0
-offset_top = 378.0
-offset_right = 1993.9922
-offset_bottom = 1474.2532
-rotation = 1.5707964
-scale = Vector2(0.295, 0.59)
-texture = ExtResource("1_55rep")
-
-[node name="TextureRect6" type="TextureRect" parent="." unique_id=628206993]
-offset_left = 653.0
-offset_top = -1599.0
-offset_right = 2004.9922
-offset_bottom = -502.74683
-rotation = 1.5707964
-scale = Vector2(0.295, 0.59)
-texture = ExtResource("1_55rep")
-
 [node name="Pothole" parent="." unique_id=1991561950 instance=ExtResource("5_teywi")]
 position = Vector2(325, -326)
 
+[node name="TerrainController" parent="." unique_id=1321199440 instance=ExtResource("5_380s4")]
+
 [node name="MousePlayer" parent="." unique_id=2094407848 instance=ExtResource("2_vpoes")]
 unique_name_in_owner = true
-position = Vector2(314, 284)
+position = Vector2(320, 272)
 
 [node name="PlayerCam" type="Camera2D" parent="." unique_id=1266301556]
 unique_name_in_owner = true
-position = Vector2(314, 284)
-zoom = Vector2(1.165, 1.165)
+position = Vector2(320, 272)
 script = ExtResource("4_6isrq")
+
+[node name="Control" type="Control" parent="PlayerCam" unique_id=1573432593]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -266.0
+offset_top = -131.0
+offset_right = 265.0
+offset_bottom = -91.0

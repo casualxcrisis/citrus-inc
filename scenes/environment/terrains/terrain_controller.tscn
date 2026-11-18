@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c25nv1c1clthu"]
+
+[ext_resource type="Script" uid="uid://dl07xo8wvlp8p" path="res://assets/scripts/system/terrain_controller.gd" id="1_htlx0"]
+[ext_resource type="PackedScene" uid="uid://d4fk6amuono7i" path="res://scenes/environment/terrains/terrain_section_1.tscn" id="2_3luph"]
+
+[node name="TerrainController" type="Node2D" unique_id=1321199440]
+script = ExtResource("1_htlx0")
+terrain_scenes = Array[PackedScene]([ExtResource("2_3luph")])
