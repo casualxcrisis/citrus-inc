@@ -3,9 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://c0cqdxt6ghafs" path="res://icon.svg" id="1_ukhus"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d0prb"]
-radius = 25.0
+radius = 31.144823
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kps3k"]
+radius = 31.0
 
 [node name="Pothole" type="StaticBody2D" unique_id=1991561950]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1860154409]
 shape = SubResource("CircleShape2D_d0prb")
@@ -14,3 +19,9 @@ shape = SubResource("CircleShape2D_d0prb")
 position = Vector2(9.536743e-07, 0.24999964)
 scale = Vector2(0.35937494, 0.36328125)
 texture = ExtResource("1_ukhus")
+
+[node name="HitZone" type="Area2D" parent="." unique_id=1188657362 groups=["pothole"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitZone" unique_id=1450568047]
+shape = SubResource("CircleShape2D_kps3k")
+debug_color = Color(0.8915647, 0.31692615, 0.18318918, 0.41960785)

@@ -47,3 +47,11 @@ func _on_animated_sprite_2d_animation_finished():
 	## player is not turning
 	if anim_player.animation == "turn-finish":
 		anim_player.play("idle")
+
+func _on_hit_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("pothole"):
+		%PotholeHit.play()
+		Global.shake_switch = true
+		await get_tree().create_timer(0.0009).timeout #ridiculous but it works
+		Global.shake_switch = false
+		

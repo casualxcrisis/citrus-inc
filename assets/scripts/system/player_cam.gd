@@ -9,8 +9,7 @@ var trauma_power = 2
 
 
 func _ready() -> void:
-	await get_tree().create_timer(3).timeout
-	add_trauma(0.4)
+	pass
 
 func shake():
 	var amount = pow(trauma, trauma_power)
@@ -27,4 +26,6 @@ func _process(delta: float) -> void:
 	if trauma: 
 		trauma = max(trauma - decay * delta, 0)
 		shake()
-	
+		
+	if Global.shake_switch:
+		add_trauma(0.4)
