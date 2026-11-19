@@ -52,6 +52,13 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="Curve" id="Curve_ra2i3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5673759, 0.6896552), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpt7p"]
+size = Vector2(38, 27)
+
 [node name="ScoreMult" type="Node2D" unique_id=383414046]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=682554973]
@@ -59,3 +66,26 @@ sprite_frames = SubResource("SpriteFrames_ra2i3")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.8991332
+
+[node name="PickupParticles" type="CPUParticles2D" parent="." unique_id=870773655]
+position = Vector2(-6, 5)
+amount = 20
+lifetime = 0.51
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 14.47
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 73.52
+initial_velocity_max = 73.52
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_ra2i3")
+color = Color(1, 0.827451, 0.5294118, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2045608714]
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=354845615]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_tpt7p")
