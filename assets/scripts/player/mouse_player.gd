@@ -2,10 +2,13 @@ extends CharacterBody2D
 
 @onready var anim_player = $AnimatedSprite2D
 @onready var particles = $CPUParticles2D
+@onready var particle_piviot = $Piviot
 
 var last_mouse_angle = 0.0
 
 var facing_right = true
+var is_turning: bool = false
+var active_tween : Tween
 
 func  _physics_process(delta: float) -> void:
 	var vel : Vector2 = (get_global_mouse_position() - global_position)
@@ -28,13 +31,35 @@ func  _physics_process(delta: float) -> void:
 	if abs(vel).x > 50:
 		if anim_player.animation != "turn" and anim_player.animation != "turn-idle":
 			anim_player.play("turn")
+		
+		if not is_turning:
+			is_turning = true
+			if active_tween:
+				active_tween.kill()
+			active_tween = create_tween()
 			
-			## place particle rotation logic here
+			
+			active_tween.tween_property(
+				particle_piviot, 
+				"global_rotation_degrees", 
+				sign(vel.x) * 20.0, 0.4)
+			
 	else:
 		if anim_player.animation != "turn-finish" and anim_player.animation != "idle":
 			anim_player.play("turn-finish")
 			
-			## place particle rotation logic here
+		if is_turning:
+			is_turning = false
+			if active_tween:
+				active_tween.kill()
+			active_tween = create_tween()
+			
+			var start_angle: float = particle_piviot.global_rotation
+			active_tween.tween_method(
+				func(weight: float):
+					particle_piviot.global_rotation = lerp_angle(
+						start_angle, 0.0, weight)
+						,0.0, 1.0, 0.3)
 	
 	last_mouse_angle = current_mouse_angle
 
