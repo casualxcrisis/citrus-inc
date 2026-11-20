@@ -2,7 +2,7 @@ extends Node2D
 class_name TerrainController2D
 
 @export var terrain_scenes: Array[PackedScene] = []
-@export var terrain_velocity: float = -300.0
+@export var terrain_velocity = Global.terrain_speed
 @export_range(2, 100,1) var num_terrain_blocks: int = 8
 @export var cull_y: float = 720.0
 
@@ -17,6 +17,7 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	_progress_terrain(delta)
+	Global.terrain_speed += Global.speed_up_amnt
 	
 func _init_blocks(number_of_blocks: int) -> void:
 	for i in range(number_of_blocks):
