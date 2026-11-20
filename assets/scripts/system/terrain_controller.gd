@@ -2,9 +2,10 @@ extends Node2D
 class_name TerrainController2D
 
 @export var terrain_scenes: Array[PackedScene] = []
-@export var terrain_velocity = Global.terrain_speed
+@export var terrain_velocity: float = 	-300.0
 @export_range(2, 100,1) var num_terrain_blocks: int = 8
 @export var cull_y: float = 720.0
+var terrain_speed_up = true
 
 var terrain_belt: Array[TerrainSection2D] = []
 
@@ -15,9 +16,10 @@ func _ready() -> void:
 		return
 	_init_blocks(num_terrain_blocks)
 	
+	
 func _physics_process(delta: float) -> void:
 	_progress_terrain(delta)
-	Global.terrain_speed += Global.speed_up_amnt
+	_speed_up_terrain(delta)
 	
 func _init_blocks(number_of_blocks: int) -> void:
 	for i in range(number_of_blocks):
@@ -64,3 +66,11 @@ func _append_to_top_edge(
 	appending_block.position.y = (
 		target_block.position.y - appending_block.section_height
 	)
+##Speeds up the scroll speed of the TerrainSection2Ds
+func _speed_up_terrain(delta: float) -> void:
+	print(terrain_velocity) #debug -- delete when dialed in
+	await get_tree().create_timer(5).timeout #need to determine when speeding up should start -- timer set to start speeding up once the tutorial level is done? Menu --> Tutorial scene --> Main Scene: speed up begins
+	if terrain_speed_up:
+		terrain_velocity -= 10 * delta
+	if terrain_velocity <= -800:
+		terrain_speed_up = false
