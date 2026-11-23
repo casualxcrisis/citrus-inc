@@ -22,7 +22,6 @@ func add_trauma(amount):
 	trauma = min(trauma + amount, 1.0)
 
 func _process(delta: float) -> void:
-	%PlayerCam.position.y = %MousePlayer.position.y
 	if trauma: 
 		trauma = max(trauma - decay * delta, 0)
 		shake()

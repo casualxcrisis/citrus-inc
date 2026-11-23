@@ -54,4 +54,19 @@ func _on_hit_area_area_entered(area: Area2D) -> void:
 		Global.shake_switch = true
 		await get_tree().create_timer(0.0009).timeout #ridiculous but it works
 		Global.shake_switch = false
-		
+
+func _on_pick_up_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("lime"):
+		Global.fruit_score += Global.lime
+		body.queue_free()
+	elif body.is_in_group("lemon"):
+		Global.fruit_score += Global.lemon
+		body.queue_free()
+	elif body.is_in_group("orange"):
+		Global.fruit_score += Global.orange
+		body.queue_free()
+	elif body.is_in_group("buddha"):
+		Global.fruit_score += Global.buddha
+		Global.buddha_bool = true
+		body.queue_free()
+		print(Global.buddha_bool)
