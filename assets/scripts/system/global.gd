@@ -7,7 +7,7 @@ var shake_switch = false
 
 #Score
 var fruit_score = 0
-
-#Terrain Speed
-var terrain_speed: float = -300.0
-var speed_up_amnt: float = -100.0
+var lime = 10
+var lemon = 20
+var orange = 30
+var buddha = 50
