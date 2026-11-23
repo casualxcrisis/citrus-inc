@@ -70,7 +70,9 @@ func _append_to_top_edge(
 	)
 
 func _on_speed_up_timer_timeout() -> void:
-	var tween = get_tree().create_tween().bind_node(self)
+	var tween = create_tween().bind_node(self)
 	var current_terrain_vel = terrain_velocity
-	tween.tween_property(self, "terrain_velocity", (current_terrain_vel - 50), 4.0)
-	%SpeedUpTimer.start(5) 
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "terrain_velocity", (current_terrain_vel - 100), 3.0) #duration and speed up amount can be tweaked to levels that make sense here
+	%SpeedUpTimer.start(10) #should add different timer amounts for different speed levels i.e. one time for easy and middle speeds and longer timer for the last harder ones <800 is impossible tho
