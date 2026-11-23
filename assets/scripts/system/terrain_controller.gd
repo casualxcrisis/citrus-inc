@@ -22,8 +22,8 @@ func _physics_process(delta: float) -> void:
 	_progress_terrain(delta)
 	#print(%SpeedUpTimer.time_left)
 	#print(terrain_velocity)
-	print(Global.fruit_score)
-	
+	print(Global.buddha_bool)
+
 func _init_blocks(number_of_blocks: int) -> void:
 	for i in range(number_of_blocks):
 		_append_random_block()

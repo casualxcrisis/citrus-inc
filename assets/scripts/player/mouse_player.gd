@@ -57,13 +57,22 @@ func _on_hit_area_area_entered(area: Area2D) -> void:
 
 func _on_pick_up_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("lime"):
-		Global.fruit_score += Global.lime
+		if Global.buddha_bool:
+			Global.fruit_score += (Global.lime * 2)
+		else: 
+			Global.fruit_score += Global.lime
 		body.queue_free()
 	elif body.is_in_group("lemon"):
-		Global.fruit_score += Global.lemon
+		if Global.buddha_bool:
+			Global.fruit_score += (Global.lemon * 2)
+		else:
+			Global.fruit_score += Global.lemon
 		body.queue_free()
 	elif body.is_in_group("orange"):
-		Global.fruit_score += Global.orange
+		if Global.buddha_bool:
+			Global.fruit_score += (Global.orange * 2)
+		else:
+			Global.fruit_score += Global.orange
 		body.queue_free()
 	elif body.is_in_group("buddha"):
 		Global.fruit_score += Global.buddha
