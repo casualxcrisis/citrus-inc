@@ -5,7 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0prb"]
 size = Vector2(13, 35)
 
-[node name="street_sign" type="StaticBody2D" unique_id=646267089]
+[node name="StopSign" type="StaticBody2D" unique_id=646267089 groups=["static_obstacle"]]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801762860]
 position = Vector2(0.5, -18.5)

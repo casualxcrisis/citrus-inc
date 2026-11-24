@@ -5,7 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0prb"]
 size = Vector2(56, 164)
 
-[node name="Car" type="StaticBody2D" unique_id=485954393]
+[node name="Car" type="StaticBody2D" unique_id=485954393 groups=["car"]]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1405853494]
 position = Vector2(2, -34)

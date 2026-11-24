@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://tq5qk5qbbhqv"]
+
+[ext_resource type="Script" uid="uid://d3cxwp7lcqkqy" path="res://assets/scripts/system/pedestrian_trigger.gd" id="1_q63fp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd1l"]
+size = Vector2(640, 20)
+
+[node name="PedestrianTrigger" type="Area2D" unique_id=1081678394]
+script = ExtResource("1_q63fp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219975735]
+position = Vector2(320, 0)
+shape = SubResource("RectangleShape2D_0yd1l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

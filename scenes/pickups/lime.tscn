@@ -55,7 +55,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Lime" type="StaticBody2D" unique_id=1046087337]
+[node name="Lime" type="StaticBody2D" unique_id=1046087337 groups=["lime"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1712292629]
 position = Vector2(0, -1)
