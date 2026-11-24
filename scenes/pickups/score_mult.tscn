@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b2d8jw5uk7wnf" path="res://assets/art/pickups-Sheet.png" id="1_6kqkf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpt7p"]
+size = Vector2(38, 27)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewjkf"]
 atlas = ExtResource("1_6kqkf")
 region = Rect2(0, 288, 48, 48)
@@ -56,10 +59,13 @@ animations = [{
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5673759, 0.6896552), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpt7p"]
-size = Vector2(38, 27)
+[node name="StaticBody2D" type="StaticBody2D" unique_id=863213344 groups=["score_mult"]]
+collision_layer = 2
+collision_mask = 2
 
-[node name="ScoreMult" type="Node2D" unique_id=383414046]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=354845615]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_tpt7p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=682554973]
 sprite_frames = SubResource("SpriteFrames_ra2i3")
@@ -82,10 +88,3 @@ initial_velocity_max = 73.52
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_ra2i3")
 color = Color(1, 0.827451, 0.5294118, 1)
-
-[node name="Area2D" type="Area2D" parent="." unique_id=2045608714]
-position = Vector2(0, 4)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=354845615]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_tpt7p")

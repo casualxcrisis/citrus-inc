@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://l0uknt8r562m"
-path="res://.godot/imported/cat-fox_alex__sfx_29.wav-a887a1574d45344b68e9f1177f3d83ba.sample"
+path="res://.godot/imported/carcrash.wav-fa35702390a063fbc0df11ac1140c410.sample"
 
 [deps]
 
-source_file="res://assets/soundfx/cat-fox_alex__sfx_29.wav"
-dest_files=["res://.godot/imported/cat-fox_alex__sfx_29.wav-a887a1574d45344b68e9f1177f3d83ba.sample"]
+source_file="res://assets/soundfx/carcrash.wav"
+dest_files=["res://.godot/imported/carcrash.wav-fa35702390a063fbc0df11ac1140c410.sample"]
 
 [params]
 

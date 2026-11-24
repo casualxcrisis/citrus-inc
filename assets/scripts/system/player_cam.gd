@@ -26,5 +26,11 @@ func _process(delta: float) -> void:
 		trauma = max(trauma - decay * delta, 0)
 		shake()
 		
-	if Global.shake_switch:
+	if Global.pothole_shake:
+		add_trauma(0.28)
+	if Global.obst_shake:
 		add_trauma(0.4)
+	if Global.ped_shake:
+		add_trauma(0.48)
+	if Global.car_shake:
+		add_trauma(0.52)

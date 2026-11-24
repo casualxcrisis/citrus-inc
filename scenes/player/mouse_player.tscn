@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://btsj6reuh657e" path="res://assets/scripts/player/mouse_player.gd" id="1_f33fw"]
 [ext_resource type="Texture2D" uid="uid://b17ky6to7c1wv" path="res://assets/art/player-Sheet.png" id="2_f33fw"]
-[ext_resource type="AudioStream" uid="uid://l0uknt8r562m" path="res://assets/soundfx/cat-fox_alex__sfx_29.wav" id="3_s1xe2"]
+[ext_resource type="AudioStream" uid="uid://j8abj1ulv5pp" path="res://assets/soundfx/fruitpickup.wav" id="3_cisf6"]
+[ext_resource type="AudioStream" uid="uid://l0uknt8r562m" path="res://assets/soundfx/carcrash.wav" id="3_s1xe2"]
+[ext_resource type="AudioStream" uid="uid://cug5facqhyp82" path="res://assets/soundfx/buddha_pickup.wav" id="4_mblnd"]
+[ext_resource type="AudioStream" uid="uid://di56rwfyp2y3f" path="res://assets/soundfx/pedhit.wav" id="6_4ur07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd1l"]
 size = Vector2(25, 10)
@@ -225,15 +228,22 @@ volume_db = -19.439
 
 [node name="LimePickup" type="AudioStreamPlayer2D" parent="." unique_id=2111081649]
 unique_name_in_owner = true
+stream = ExtResource("3_cisf6")
+pitch_scale = 0.51
 
 [node name="LemonPickup" type="AudioStreamPlayer2D" parent="." unique_id=727569008]
 unique_name_in_owner = true
+stream = ExtResource("3_cisf6")
+pitch_scale = 0.8
 
 [node name="OrangePickup" type="AudioStreamPlayer2D" parent="." unique_id=1405666656]
 unique_name_in_owner = true
+stream = ExtResource("3_cisf6")
+pitch_scale = 1.38
 
 [node name="BuddhaPickup" type="AudioStreamPlayer2D" parent="." unique_id=1510601664]
 unique_name_in_owner = true
+stream = ExtResource("4_mblnd")
 
 [node name="InvincibilityAura" type="AudioStreamPlayer2D" parent="." unique_id=565876370]
 unique_name_in_owner = true
@@ -244,6 +254,16 @@ stream = ExtResource("3_s1xe2")
 
 [node name="ScoreMult" type="AudioStreamPlayer2D" parent="." unique_id=275535189]
 unique_name_in_owner = true
+
+[node name="GameOverChime" type="AudioStreamPlayer2D" parent="." unique_id=744444331]
+unique_name_in_owner = true
+
+[node name="ObstacleHit" type="AudioStreamPlayer2D" parent="." unique_id=969731952]
+unique_name_in_owner = true
+
+[node name="PedHit" type="AudioStreamPlayer2D" parent="." unique_id=1273859044]
+unique_name_in_owner = true
+stream = ExtResource("6_4ur07")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]

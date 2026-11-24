@@ -21,7 +21,7 @@ func  _physics_process(delta: float) -> void:
 	if Global.mult_bool:
 		_mult_buffer()
 	move_and_slide()
-	print(Global.buddha_bool)
+	print(Global.mult_bool)
 	## animation stuff
 	var current_mouse_angle = vel.angle()
 	
@@ -64,25 +64,51 @@ func _buddha_buffer():
 func _mult_buffer():
 	await get_tree().create_timer(10).timeout
 	Global.mult_bool = false
-	
+##Camera shaker for the pothole
+func _shaker_pot():
+	Global.pothole_shake = true
+	await get_tree().create_timer(0.0009).timeout #ridiculous but it works
+	Global.pothole_shake = false
+##Camera shaker for static obstacles that aren't the car
+func _shaker_static():
+	Global.obst_shake = true
+	await get_tree().create_timer(0.0009).timeout
+	Global.obst_shake = false
+##Camera shaker for pedestrians
+func _ped_shaker():
+	Global.ped_shake = true
+	await get_tree().create_timer(0.0009).timeout
+	Global.ped_shake = false
+##Camer shaker for cars
+func _car_shaker():
+	Global.car_shake = true
+	await get_tree().create_timer(0.0009).timeout
+	Global.car_shake = false
+
 func _on_hit_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("pothole"):
 		%PotholeHit.play()
-		Global.shake_switch = true
-		await get_tree().create_timer(0.0009).timeout #ridiculous but it works
-		Global.shake_switch = false
+		_shaker_pot()
+	
+func _on_hit_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("car"):
+		_car_shaker()
+		Global.car_bool = true
+		%CarCrash.play()
 	
 
 func _on_pick_up_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("lime"):
+		%LimePickup.play()
 		if Global.buddha_bool:
 			Global.fruit_score += (Global.lime * 2)
 		elif Global.mult_bool:
-			Global._fruit_score += (Global.lime * 5)
+			Global.fruit_score += (Global.lime * 5)
 		else: 
 			Global.fruit_score += Global.lime
 		body.queue_free()
 	elif body.is_in_group("lemon"):
+		%LemonPickup.play()
 		if Global.buddha_bool:
 			Global.fruit_score += (Global.lemon * 2)
 		elif Global.mult_bool:
@@ -91,6 +117,7 @@ func _on_pick_up_area_body_entered(body: Node2D) -> void:
 			Global.fruit_score += Global.lemon
 		body.queue_free()
 	elif body.is_in_group("orange"):
+		%OrangePickup.play()
 		if Global.buddha_bool:
 			Global.fruit_score += (Global.orange * 2)
 		elif Global.mult_bool:
@@ -99,6 +126,7 @@ func _on_pick_up_area_body_entered(body: Node2D) -> void:
 			Global.fruit_score += Global.orange
 		body.queue_free()
 	elif body.is_in_group("buddha"):
+		%BuddhaPickup.play()
 		Global.fruit_score += Global.buddha
 		Global.buddha_bool = true
 		body.queue_free()
@@ -106,9 +134,3 @@ func _on_pick_up_area_body_entered(body: Node2D) -> void:
 	elif body.is_in_group("score_mult"):
 		Global.mult_bool = true
 		body.queue_free()
-
-
-func _on_hit_area_body_entered(body: Node2D) -> void:
-	if body.is_in_group("car"):
-		Global.car_bool = true
-		%CarCrash.play()
