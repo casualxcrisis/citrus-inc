@@ -13,6 +13,7 @@ var car_shake = false
 
 #obstacles
 var car_bool = false
+var ped_bool = false
 
 #Score
 var fruit_score = 0

@@ -100,6 +100,11 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		%ObstacleHit.play()
 		_shaker_static()
 		Global.fruit_score -= Global.obst_score_loss
+	elif body.is_in_group("pedestrian"):
+		%Blood.emitting = true
+		%PedHit.play()
+		_ped_shaker()
+		Global.fruit_score -= Global.ped_score_loss
 	
 
 func _on_pick_up_area_body_entered(body: Node2D) -> void:
