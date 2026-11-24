@@ -2,9 +2,11 @@ extends Node2D
 class_name TerrainController2D
 
 @export var terrain_scenes: Array[PackedScene] = []
-@export var terrain_velocity: float = -300.0
+@export var terrain_velocity: float =  Global.terrain_speed
 @export_range(2, 100,1) var num_terrain_blocks: int = 8
 @export var cull_y: float = 720.0
+
+
 
 var terrain_belt: Array[TerrainSection2D] = []
 
@@ -14,10 +16,17 @@ func _ready() -> void:
 		set_physics_process(false)
 		return
 	_init_blocks(num_terrain_blocks)
-	
+
+
 func _physics_process(delta: float) -> void:
 	_progress_terrain(delta)
-	
+	#print(%SpeedUpTimer.time_left)
+	print(terrain_velocity)
+	#print(Global.buddha_bool)
+	if Global.car_bool:
+		terrain_velocity = 0.0
+		%SpeedUpTimer.is_stopped()
+
 func _init_blocks(number_of_blocks: int) -> void:
 	for i in range(number_of_blocks):
 		_append_random_block()
@@ -63,3 +72,13 @@ func _append_to_top_edge(
 	appending_block.position.y = (
 		target_block.position.y - appending_block.section_height
 	)
+
+func _on_speed_up_timer_timeout() -> void:
+	var tween = create_tween().bind_node(self)
+	var current_terrain_vel = terrain_velocity
+	tween.set_trans(Tween.TRANS_QUINT)
+	tween.set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "terrain_velocity", (current_terrain_vel - 50), 3.0) #duration and speed up amount can be tweaked to levels that make sense here
+	%SpeedUpTimer.start(10) #should add different timer amounts for different speed levels i.e. one time for easy and middle speeds and longer timer for the last harder ones <800 is impossible tho
+	if Global.car_bool:
+		tween.kill()

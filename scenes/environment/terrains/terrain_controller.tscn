@@ -6,3 +6,11 @@
 [node name="TerrainController" type="Node2D" unique_id=1321199440]
 script = ExtResource("1_htlx0")
 terrain_scenes = Array[PackedScene]([ExtResource("2_3luph")])
+
+[node name="SpeedUpTimer" type="Timer" parent="." unique_id=1197775942]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="SpeedUpTimer" to="." method="_on_speed_up_timer_timeout"]

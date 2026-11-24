@@ -5,7 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0prb"]
 size = Vector2(21, 29)
 
-[node name="trash_can" type="StaticBody2D" unique_id=731089628]
+[node name="trash_can" type="StaticBody2D" unique_id=731089628 groups=["static_obstacle"]]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2096448703]
 position = Vector2(-0.5, -9.5)

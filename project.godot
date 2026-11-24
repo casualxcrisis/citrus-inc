@@ -32,6 +32,15 @@ window/stretch/scale_mode="integer"
 [global_group]
 
 pothole=""
+lime=""
+buddha=""
+lemon=""
+orange=""
+car=""
+static_obstacle=""
+score_mult=""
+pedestrian=""
+player=""
 
 [input]
 

@@ -1,13 +1,39 @@
 [gd_scene format=3 uid="uid://crryyfewqh4bq"]
 
 [ext_resource type="Script" uid="uid://bc20qblvvdm8l" path="res://assets/scripts/levels/testing_ground.gd" id="1_6lkv4"]
+[ext_resource type="Shader" uid="uid://dxtmsrujrl8vv" path="res://assets/shaders/crt.gdshader" id="2_0qc58"]
 [ext_resource type="PackedScene" uid="uid://d2kmaid37p020" path="res://scenes/player/mouse_player.tscn" id="2_vpoes"]
 [ext_resource type="Script" uid="uid://c61387bllj1yg" path="res://assets/scripts/system/player_cam.gd" id="4_6isrq"]
 [ext_resource type="PackedScene" uid="uid://c25nv1c1clthu" path="res://scenes/environment/terrains/terrain_controller.tscn" id="5_380s4"]
 [ext_resource type="PackedScene" uid="uid://fp5s56vt6moc" path="res://scenes/obstacles/pothole.tscn" id="5_teywi"]
+[ext_resource type="FontFile" uid="uid://dqm0auf56xh1w" path="res://assets/UI/GravityBold8.ttf" id="6_jpf7c"]
+[ext_resource type="Script" uid="uid://6lk1tsyfipd8" path="res://assets/scripts/system/score_label.gd" id="7_0qc58"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0yd1l"]
+shader = ExtResource("2_0qc58")
+shader_parameter/curvature = 0.01200000057
+shader_parameter/corner_radius = 0.06
+shader_parameter/border_color = Color(0, 0, 0, 1)
+shader_parameter/scanlines = 0.35
+shader_parameter/scanline_size = 4.1630001027425
+shader_parameter/vignette = 0.35
+shader_parameter/brightness = 1.2070000335825
+shader_parameter/rgb_mask = false
+shader_parameter/mask_strength = 0.3
 
 [node name="TestingGround" type="Node2D" unique_id=189769796]
 script = ExtResource("1_6lkv4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=285058010]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1249886011]
+material = SubResource("ShaderMaterial_0yd1l")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Pothole" parent="." unique_id=1991561950 instance=ExtResource("5_teywi")]
 position = Vector2(325, -326)
@@ -16,17 +42,40 @@ position = Vector2(325, -326)
 
 [node name="MousePlayer" parent="." unique_id=2094407848 instance=ExtResource("2_vpoes")]
 unique_name_in_owner = true
-position = Vector2(320, 224)
+position = Vector2(320, 217)
 
 [node name="PlayerCam" type="Camera2D" parent="." unique_id=1266301556]
 unique_name_in_owner = true
-position = Vector2(320, 224)
+position = Vector2(320, 140)
+process_callback = 0
 script = ExtResource("4_6isrq")
 
-[node name="Control" type="Control" parent="PlayerCam" unique_id=1573432593]
+[node name="PlayerUI" type="Control" parent="PlayerCam" unique_id=1573432593]
 layout_mode = 3
-anchors_preset = 0
-offset_left = -266.0
-offset_top = -131.0
-offset_right = 265.0
-offset_bottom = -91.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -265.0
+offset_top = 155.0
+offset_right = 266.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Score" type="RichTextLabel" parent="PlayerCam/PlayerUI" unique_id=960652623]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.5
+offset_top = -15.0
+offset_right = 207.27496
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("6_jpf7c")
+bbcode_enabled = true
+horizontal_alignment = 1
+script = ExtResource("7_0qc58")

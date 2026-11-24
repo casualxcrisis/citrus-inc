@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://c46f7t53cps7r"
-path="res://.godot/imported/bump2.wav-68d05e1b1c038729c0eef9e8b1cb8eaa.sample"
+uid="uid://lcba0yim2e4i"
+path="res://.godot/imported/obsthit.wav-3e835c8545fa922979b35bb6a9b7e4e3.sample"
 
 [deps]
 
-source_file="res://assets/soundfx/bump2.wav"
-dest_files=["res://.godot/imported/bump2.wav-68d05e1b1c038729c0eef9e8b1cb8eaa.sample"]
+source_file="res://assets/soundfx/obsthit.wav"
+dest_files=["res://.godot/imported/obsthit.wav-3e835c8545fa922979b35bb6a9b7e4e3.sample"]
 
 [params]
 
