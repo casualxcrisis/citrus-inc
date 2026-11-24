@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://l0uknt8r562m" path="res://assets/soundfx/carcrash.wav" id="3_s1xe2"]
 [ext_resource type="AudioStream" uid="uid://cug5facqhyp82" path="res://assets/soundfx/buddha_pickup.wav" id="4_mblnd"]
 [ext_resource type="AudioStream" uid="uid://di56rwfyp2y3f" path="res://assets/soundfx/pedhit.wav" id="6_4ur07"]
+[ext_resource type="AudioStream" uid="uid://lcba0yim2e4i" path="res://assets/soundfx/obsthit.wav" id="6_mblnd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd1l"]
 size = Vector2(25, 10)
@@ -202,6 +203,24 @@ scale_amount_min = 2.0
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_6isrq")
 
+[node name="Blood" type="CPUParticles2D" parent="." unique_id=1039969224]
+unique_name_in_owner = true
+emitting = false
+amount = 18
+one_shot = true
+speed_scale = 2.56
+explosiveness = 1.0
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 17.64
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.15
+initial_velocity_max = 52.85
+scale_amount_min = 2.05
+scale_amount_max = 3.3
+color = Color(0.7429936, 0, 0.12568417, 1)
+
 [node name="HitArea" type="Area2D" parent="." unique_id=1159033916]
 collision_layer = 5
 collision_mask = 5
@@ -260,6 +279,7 @@ unique_name_in_owner = true
 
 [node name="ObstacleHit" type="AudioStreamPlayer2D" parent="." unique_id=969731952]
 unique_name_in_owner = true
+stream = ExtResource("6_mblnd")
 
 [node name="PedHit" type="AudioStreamPlayer2D" parent="." unique_id=1273859044]
 unique_name_in_owner = true

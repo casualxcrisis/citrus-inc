@@ -95,6 +95,11 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		_car_shaker()
 		Global.car_bool = true
 		%CarCrash.play()
+	elif body.is_in_group("static_obstacle"):
+		%Blood.emitting = true
+		%ObstacleHit.play()
+		_shaker_static()
+		Global.fruit_score -= Global.obst_score_loss
 	
 
 func _on_pick_up_area_body_entered(body: Node2D) -> void:
