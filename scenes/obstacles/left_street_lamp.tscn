@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://ban8y6arulvl1"]
 
-[ext_resource type="Texture2D" uid="uid://qs5wus52t1e" path="res://assets/art/obstacles/streetlamp2.png" id="1_03yjm"]
+[ext_resource type="Texture2D" uid="uid://qs5wus52t1e" path="res://assets/art/obstacles/streetlamp2.png" id="1_g7ds0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0prb"]
 size = Vector2(12, 42)
 
-[node name="street_lamp" type="StaticBody2D" unique_id=637719745]
+[node name="LeftStreetLamp" type="StaticBody2D" unique_id=637719745 groups=["static_obstacle"]]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=404780711]
 position = Vector2(-1, 27)
 shape = SubResource("RectangleShape2D_d0prb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=963342024]
-texture = ExtResource("1_03yjm")
+texture = ExtResource("1_g7ds0")

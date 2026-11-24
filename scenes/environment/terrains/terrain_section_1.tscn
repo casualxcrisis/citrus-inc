@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://q7b2da0rlp51" path="res://scenes/pickups/lime.tscn" id="4_djdgl"]
 [ext_resource type="PackedScene" uid="uid://dk535grgualkj" path="res://scenes/pickups/orange.tscn" id="5_o83ve"]
 [ext_resource type="PackedScene" uid="uid://bfu5o8nu4g5q4" path="res://scenes/pickups/lemon.tscn" id="6_bfuwf"]
-[ext_resource type="PackedScene" uid="uid://cau6pxk24i2b8" path="res://scenes/obstacles/mail_box.tscn" id="7_o83ve"]
-[ext_resource type="PackedScene" uid="uid://dhj8tnd0e81a3" path="res://scenes/obstacles/hotdog_cart.tscn" id="8_bfuwf"]
+[ext_resource type="PackedScene" uid="uid://c00mol5iwjisl" path="res://scenes/obstacles/trash_can.tscn" id="7_byhto"]
+[ext_resource type="PackedScene" uid="uid://1o8x7aapfylo" path="res://scenes/obstacles/stop_sign.tscn" id="8_cc5es"]
 [ext_resource type="PackedScene" uid="uid://bhmbkxvese7el" path="res://scenes/pickups/score_mult.tscn" id="9_byhto"]
+[ext_resource type="PackedScene" uid="uid://ban8y6arulvl1" path="res://scenes/obstacles/left_street_lamp.tscn" id="9_cpx0w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_djdgl"]
 texture = ExtResource("2_7cnqw")
@@ -97,8 +98,11 @@ position = Vector2(440, -102)
 [node name="ScoreMult" parent="." unique_id=383414046 instance=ExtResource("9_byhto")]
 position = Vector2(303, -19)
 
-[node name="mail_box" parent="." unique_id=1206943739 instance=ExtResource("7_o83ve")]
-position = Vector2(105, -90)
+[node name="trash_can" parent="." unique_id=731089628 instance=ExtResource("7_byhto")]
+position = Vector2(73, -93)
 
-[node name="hotdog_cart" parent="." unique_id=569065226 instance=ExtResource("8_bfuwf")]
-position = Vector2(342, -77)
+[node name="street_sign" parent="." unique_id=646267089 instance=ExtResource("8_cc5es")]
+position = Vector2(126, -95)
+
+[node name="street_lamp" parent="." unique_id=637719745 instance=ExtResource("9_cpx0w")]
+position = Vector2(234, -125)
