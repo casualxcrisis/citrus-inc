@@ -6,6 +6,7 @@ var base_accel = 3.0
 var shake_switch = false
 var terrain_speed = -300.0
 var car_bool = false
+var mult_bool = false
 
 #Score
 var fruit_score = 0

@@ -16,8 +16,12 @@ func  _physics_process(delta: float) -> void:
 	if Global.car_bool:
 		Global.base_accel = 0.0
 		Global.base_speed = 0
+	if Global.buddha_bool:
+		_buddha_buffer()
+	if Global.mult_bool:
+		_mult_buffer()
 	move_and_slide()
-	
+	print(Global.buddha_bool)
 	## animation stuff
 	var current_mouse_angle = vel.angle()
 	
@@ -51,6 +55,16 @@ func _on_animated_sprite_2d_animation_finished():
 	if anim_player.animation == "turn-finish":
 		anim_player.play("idle")
 
+
+##Sets a timeout for how long the buddha buff is active
+func _buddha_buffer():
+	await get_tree().create_timer(10).timeout
+	Global.buddha_bool = false 
+##Sets timeout for how long the score multiplier is active
+func _mult_buffer():
+	await get_tree().create_timer(10).timeout
+	Global.mult_bool = false
+	
 func _on_hit_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("pothole"):
 		%PotholeHit.play()
@@ -63,18 +77,24 @@ func _on_pick_up_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("lime"):
 		if Global.buddha_bool:
 			Global.fruit_score += (Global.lime * 2)
+		elif Global.mult_bool:
+			Global._fruit_score += (Global.lime * 5)
 		else: 
 			Global.fruit_score += Global.lime
 		body.queue_free()
 	elif body.is_in_group("lemon"):
 		if Global.buddha_bool:
 			Global.fruit_score += (Global.lemon * 2)
+		elif Global.mult_bool:
+			Global.fruit_score += (Global.lemon * 5)
 		else:
 			Global.fruit_score += Global.lemon
 		body.queue_free()
 	elif body.is_in_group("orange"):
 		if Global.buddha_bool:
 			Global.fruit_score += (Global.orange * 2)
+		elif Global.mult_bool:
+			Global.fruit_score += (Global.orange * 5)
 		else:
 			Global.fruit_score += Global.orange
 		body.queue_free()
@@ -83,6 +103,9 @@ func _on_pick_up_area_body_entered(body: Node2D) -> void:
 		Global.buddha_bool = true
 		body.queue_free()
 		print(Global.buddha_bool)
+	elif body.is_in_group("score_mult"):
+		Global.mult_bool = true
+		body.queue_free()
 
 
 func _on_hit_area_body_entered(body: Node2D) -> void:

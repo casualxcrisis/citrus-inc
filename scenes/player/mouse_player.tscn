@@ -242,6 +242,9 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 stream = ExtResource("3_s1xe2")
 
+[node name="ScoreMult" type="AudioStreamPlayer2D" parent="." unique_id=275535189]
+unique_name_in_owner = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
 [connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]

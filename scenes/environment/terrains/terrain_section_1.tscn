@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bfu5o8nu4g5q4" path="res://scenes/pickups/lemon.tscn" id="6_bfuwf"]
 [ext_resource type="PackedScene" uid="uid://cxhioekjgf8e0" path="res://scenes/pickups/buddha_hand.tscn" id="7_byhto"]
 [ext_resource type="PackedScene" uid="uid://b7kymm6g3fhno" path="res://scenes/obstacles/car.tscn" id="8_bfuwf"]
+[ext_resource type="PackedScene" uid="uid://bhmbkxvese7el" path="res://scenes/pickups/score_mult.tscn" id="9_byhto"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_djdgl"]
 texture = ExtResource("2_7cnqw")
@@ -102,3 +103,6 @@ position = Vector2(115, -88)
 
 [node name="Car" parent="." unique_id=485954393 instance=ExtResource("8_bfuwf")]
 position = Vector2(377, -172)
+
+[node name="ScoreMult" parent="." unique_id=383414046 instance=ExtResource("9_byhto")]
+position = Vector2(242, -163)
