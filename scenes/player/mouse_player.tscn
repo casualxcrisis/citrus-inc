@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btsj6reuh657e" path="res://assets/scripts/player/mouse_player.gd" id="1_f33fw"]
 [ext_resource type="Texture2D" uid="uid://b17ky6to7c1wv" path="res://assets/art/player-Sheet.png" id="2_f33fw"]
+[ext_resource type="AudioStream" uid="uid://l0uknt8r562m" path="res://assets/soundfx/cat-fox_alex__sfx_29.wav" id="3_s1xe2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yd1l"]
 size = Vector2(25, 10)
@@ -199,6 +200,8 @@ scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_6isrq")
 
 [node name="HitArea" type="Area2D" parent="." unique_id=1159033916]
+collision_layer = 5
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitArea" unique_id=1078264532]
 position = Vector2(0, 20)
@@ -235,6 +238,11 @@ unique_name_in_owner = true
 [node name="InvincibilityAura" type="AudioStreamPlayer2D" parent="." unique_id=565876370]
 unique_name_in_owner = true
 
+[node name="CarCrash" type="AudioStreamPlayer2D" parent="." unique_id=781222131]
+unique_name_in_owner = true
+stream = ExtResource("3_s1xe2")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
 [connection signal="body_entered" from="PickUpArea" to="." method="_on_pick_up_area_body_entered"]

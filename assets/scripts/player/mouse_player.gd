@@ -13,6 +13,9 @@ func  _physics_process(delta: float) -> void:
 		vel = vel.normalized() * Global.base_speed
 	velocity = vel * Global.base_accel
 	velocity.y = 0
+	if Global.car_bool:
+		Global.base_accel = 0.0
+		Global.base_speed = 0
 	move_and_slide()
 	
 	## animation stuff
@@ -54,6 +57,7 @@ func _on_hit_area_area_entered(area: Area2D) -> void:
 		Global.shake_switch = true
 		await get_tree().create_timer(0.0009).timeout #ridiculous but it works
 		Global.shake_switch = false
+	
 
 func _on_pick_up_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("lime"):
@@ -79,3 +83,9 @@ func _on_pick_up_area_body_entered(body: Node2D) -> void:
 		Global.buddha_bool = true
 		body.queue_free()
 		print(Global.buddha_bool)
+
+
+func _on_hit_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("car"):
+		Global.car_bool = true
+		%CarCrash.play()
