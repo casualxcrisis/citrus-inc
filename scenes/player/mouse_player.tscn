@@ -192,10 +192,6 @@ autoplay = "idle"
 frame = 7
 frame_progress = 0.9889159
 
-
-
-
-
 [node name="Blood" type="CPUParticles2D" parent="." unique_id=1039969224]
 unique_name_in_owner = true
 emitting = false
@@ -213,7 +209,6 @@ initial_velocity_max = 52.85
 scale_amount_min = 2.05
 scale_amount_max = 3.3
 color = Color(0.7429936, 0, 0.12568417, 1)
-
 
 [node name="HitArea" type="Area2D" parent="." unique_id=1159033916]
 collision_layer = 5
@@ -238,7 +233,6 @@ debug_color = Color(0, 0.6437002, 0.30090627, 0.41960785)
 unique_name_in_owner = true
 stream = SubResource("AudioStreamWAV_f33fw")
 volume_db = -19.439
-
 
 [node name="Piviot" type="Node2D" parent="." unique_id=978179440]
 
@@ -291,7 +285,6 @@ stream = ExtResource("6_mblnd")
 [node name="PedHit" type="AudioStreamPlayer2D" parent="." unique_id=1273859044]
 unique_name_in_owner = true
 stream = ExtResource("6_4ur07")
-
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="HitArea" to="." method="_on_hit_area_area_entered"]
