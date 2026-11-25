@@ -16,5 +16,5 @@ position = Vector2(653, -91)
 
 [node name="Tileset1" type="Sprite2D" parent="." unique_id=1502253524]
 z_index = -100
-position = Vector2(320, 320)
+position = Vector2(320, 640)
 texture = ExtResource("4_djdgl")
