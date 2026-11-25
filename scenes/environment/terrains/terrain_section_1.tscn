@@ -1,18 +1,14 @@
 [gd_scene format=3 uid="uid://d4fk6amuono7i"]
 
 [ext_resource type="Script" uid="uid://lywjys4k3bhw" path="res://assets/scripts/levels/terrain_section.gd" id="1_2juy7"]
-[ext_resource type="PackedScene" uid="uid://tq5qk5qbbhqv" path="res://scenes/obstacles/pedestrian_trigger.tscn" id="3_djdgl"]
 [ext_resource type="Texture2D" uid="uid://dpiqkkdhi65td" path="res://assets/art/tiles/tileset_1.png" id="4_djdgl"]
-[ext_resource type="PackedScene" uid="uid://dq5svhf884ig5" path="res://scenes/obstacles/pedestrian.tscn" id="10_jbx0d"]
+[ext_resource type="PackedScene" uid="uid://dq5svhf884ig5" path="res://scenes/obstacles/femjogger.tscn" id="10_jbx0d"]
 
 [node name="TerrainSection1" type="Node2D" unique_id=443707818]
 script = ExtResource("1_2juy7")
 
-[node name="PedestrianTrigger" parent="." unique_id=1081678394 instance=ExtResource("3_djdgl")]
-position = Vector2(0, 244)
-
 [node name="Pedestrian" parent="." unique_id=287323599 instance=ExtResource("10_jbx0d")]
-position = Vector2(653, -91)
+position = Vector2(653, 11)
 
 [node name="Tileset1" type="Sprite2D" parent="." unique_id=1502253524]
 z_index = -100
