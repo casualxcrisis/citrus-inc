@@ -1,4 +1,4 @@
 extends Node2D
 class_name TerrainSection2D
 
-@export var section_height: float = 1280.0
+@export var section_height: float = 1279.0
